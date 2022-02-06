@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+psycopg2 = "*"
+gunicorn = "*"
+flask-restful = "*"
+pydantic = "*"
+flask-jwt-extended = "*"
+passlib = "*"
+configparser = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
