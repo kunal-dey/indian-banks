@@ -30,11 +30,11 @@ def operate_on_db():
     cursor = None
     try:
         connection = psycopg2.connect(
-            host="localhost",
-            port="6000",
-            database="indianbanks",
-            user="postgres",
-            password="kunal@22061994"
+            host=CONFIG['database']['host'],
+            port=CONFIG['database']['port'],
+            database=CONFIG['database']['database'],
+            user=CONFIG['database']['user'],
+            password=CONFIG['database']['password']
         )
         cursor = connection.cursor()
         yield cursor
