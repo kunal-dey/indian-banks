@@ -28,6 +28,9 @@ class UserLogin(Resource):
             return {
                 "msg":err.message
             }, 500
+
+        print(user_model.user.password)
+        print(pbkdf2_sha256.verify(data["password"],user_model.user.password))
         
         if user_model and pbkdf2_sha256.verify(data["password"],user_model.user.password):
             access_token = create_access_token(

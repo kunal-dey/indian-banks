@@ -51,8 +51,10 @@ class User(BaseModel):
 
             if not _check_lower_character(val=value):
                 raise PasswordFormatException("Password must contain a small letter.")
-
-        return pbkdf2_sha256.hash(value)
+                
+            return pbkdf2_sha256.hash(value)
+        
+        return value
 
 
     @classmethod
