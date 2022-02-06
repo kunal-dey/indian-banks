@@ -1,4 +1,3 @@
-from lib2to3.pgen2.token import OP
 from typing import Optional
 from pydantic import BaseModel, root_validator, validator
 from exceptions.password_format_exception import PasswordFormatException
@@ -34,7 +33,7 @@ class User(BaseModel):
 
     @validator("password")
     @classmethod
-    def valid_ifsc_code(cls, value, values):
+    def valid_password(cls, value, values):
         """
             Validator to check whether the password contains required characters
         """
